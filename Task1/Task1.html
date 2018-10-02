@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pictire1</title>
+    <style>
+    canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    border: 1px solid black;  
+    }
+    </style>
+    <script src="Modernizr-2.0.6.js" type="text/javascript"></script>
+</head>
+<body>
+    <canvas id="canvas" height="600" width="500">
+        Ваш браузер не поддерживает элемент <b>Canvas</b>
+    </canvas>
+     <script>
+        
+        function drawFace() {
+            if (!Modernizr.canvas) return;
+
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            
+            //Face
+            context.scale(1, 0.9);
+
+            context.beginPath();
+            context.arc(230, 380, 113, 0, 2 * Math.PI);
+            
+            context.lineWidth = 8;
+            context.strokeStyle = "#416c72";
+            context.stroke();
+
+            context.restore();
+
+            context.fillStyle = "#89d4dd";
+            context.fill();
+
+            //Eyes
+            context.beginPath();
+            context.ellipse(160, 340, 18, 13, 0, 0, 2 * Math.PI);
+            context.lineWidth = 8;
+            context.strokeStyle = "#416c72";
+            context.stroke();
+
+            context.fillStyle = "#89d4dd";
+            context.fill();
+
+            context.beginPath();
+            context.ellipse(250, 340, 18, 13, 0, 0, 2 * Math.PI);
+            context.lineWidth = 8;
+            context.strokeStyle = "#416c72";
+            context.stroke();
+
+            context.fillStyle = "#89d4dd";
+            context.fill();
+
+
+            context.beginPath();
+            context.ellipse(152, 340, 6, 12, 0, 0, 2 * Math.PI);
+            context.fillStyle = "#416c72";
+            context.fill();
+
+            context.beginPath();
+            context.ellipse(242, 340, 6, 12, 0, 0, 2 * Math.PI);
+            context.fillStyle = "#416c72";
+            context.fill();
+
+            //Nose
+            context.beginPath();
+            context.moveTo(205, 345);
+            context.lineTo(185, 400);
+
+            context.lineWidth = 4;
+            context.strokeStyle = "#416c72";
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(185, 400);
+            context.lineTo(210, 400);
+            
+            context.lineWidth = 5;
+            context.strokeStyle = "#416c72";
+            context.stroke();
+
+            //Hat
+            context.beginPath();
+            context.ellipse(220, 280, 130, 25, 0, 0, 2 * Math.PI);
+            context.lineWidth = 8;
+            context.strokeStyle = "#000";
+            context.stroke();
+
+            context.fillStyle = "#466893";
+            context.fill();
+
+            context.fillStyle = "#466893";
+            context.fillRect(165, 130, 130, 155);
+
+            context.beginPath();
+            context.moveTo(165, 258);
+            context.bezierCurveTo(180, 290, 280, 290, 295, 258);
+            
+            context.lineWidth = 4;
+            context.strokeStyle = "#000";
+            context.stroke();
+            
+            context.beginPath();
+            context.moveTo(165, 130);
+            context.lineTo(165, 259);
+            context.lineWidth = 4;
+            context.strokeStyle = "#000";
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(295, 130);
+            context.lineTo(295, 260);
+            context.lineWidth = 4;
+            context.strokeStyle = "#000";
+            context.stroke();
+
+            context.beginPath();
+            context.ellipse(230, 130, 63, 25, 0, 0, 2 * Math.PI);
+            context.lineWidth = 8;
+            context.strokeStyle = "#000";
+            context.stroke();
+
+            context.fillStyle = "#466893";
+            context.fill();
+
+            //Mouth
+            context.rotate(-25);
+            context.beginPath();
+            context.ellipse(265, 415, 40, 14, 0, 0, 2 * Math.PI);
+            context.restore();
+
+            context.lineWidth = 8;
+            context.strokeStyle = "#416c72";
+            context.stroke();
+
+            context.fillStyle = "#89d4dd";
+            context.fill();
+        }
+
+        if (window.addEventListener)
+            window.addEventListener("load", drawFace, true);
+    </script>
+</body>
+</html>

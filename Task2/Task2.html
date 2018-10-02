@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pictire2</title>
+    <style>
+    canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    border: 1px solid black;  
+    }
+    </style>
+    <script src="Modernizr-2.0.6.js" type="text/javascript"></script>
+</head>
+<body>
+    <canvas id="canvas" height="650" width="900">
+        Ваш браузер не поддерживает элемент <b>Canvas</b>
+    </canvas>
+    <script>
+        
+        function drawBike() {
+            if (!Modernizr.canvas) return;
+
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            
+            
+            context.beginPath();
+            context.arc(270, 450, 90, 0, 2 * Math.PI);
+
+            context.lineWidth = 8;
+            context.strokeStyle = "#416c72";
+            context.stroke();
+
+            context.fillStyle = "#89d4dd";
+            context.fill();
+
+            context.beginPath();
+            context.arc(630, 450, 90, 0, 2 * Math.PI);
+
+            context.lineWidth = 8;
+            context.strokeStyle = "#416c72";
+            context.stroke();
+
+            context.fillStyle = "#89d4dd";
+            context.fill();
+
+            context.beginPath();
+            context.arc(430, 445, 25, 0, 2 * Math.PI);
+
+            context.lineWidth = 4;
+            context.strokeStyle = "#416c72";
+            context.stroke();
+            
+            context.beginPath();
+
+            context.moveTo(270, 450);
+            context.lineTo(431, 445);
+
+            context.moveTo(630, 450);
+            context.lineTo(600, 260);
+
+            context.moveTo(600, 260);
+            context.lineTo(650, 200);
+
+            context.moveTo(600, 260);
+            context.lineTo(520, 290);
+
+            context.moveTo(430, 445);
+            context.lineTo(610, 330);
+
+            context.moveTo(430, 446);
+            context.lineTo(350, 280);
+
+            context.moveTo(310, 280);
+            context.lineTo(390, 280);
+
+            context.moveTo(413, 428);
+            context.lineTo(393, 405);
+
+            context.moveTo(445, 465);
+            context.lineTo(463, 485);
+
+            context.moveTo(270, 451);
+            context.lineTo(382, 330);
+
+            context.moveTo(381, 330);
+            context.lineTo(610, 330);
+
+            context.lineWidth = 4;
+            context.strokeStyle = "#416c72";
+            context.stroke();
+        }
+
+        if (window.addEventListener)
+            window.addEventListener("load", drawBike, true);
+    </script>
+</body>
+</html>
